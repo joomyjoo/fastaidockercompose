@@ -1,10 +1,26 @@
 version: "3.3"
 services:
-  jupyter:
-    image: fastai/fastai:latest
-    environment:
+  fastai_intern:
+    image: fastai/lab
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment: # change this token by running in the terminal: openssl rand -hex 32
       - JUPYTER_TOKEN=0f2f4022e7ecbf18a06624ba63dd62f72613c3630ea57fe371e200f27842b7ee
-    volumes:
+    volumes: #link relevant volumes
       - ./data:/home/data
       - ./experiments:/home/experiments
-    
+    working_dir: /home
+    ports:
+      - "18888:8888"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: "all"
+              capabilities: [gpu]
+    command: bash -c "
+      openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /mykey.key -out /mycert.pem -batch
+      && jupyter lab --ip=0.0.0.0 --no-browser --allow-root --certfile=/mycert.pem --keyfile /mykey.key
+      "
