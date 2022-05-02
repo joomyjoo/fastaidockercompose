@@ -1,10 +1,14 @@
 # How to use
 1. Clone this repository and change the folder name to the intern's initials
 2. cd fastaidockercompose (or the intern's initials)
-3. Set the JUPYTER_TOKEN in the docker-compose.yml file; in the terminal try --> openssl rand -hex 32
+3. Set the JUPYTER_TOKEN in the docker-compose.yml file; 
 
-    this will be the token used to access the jupyter lab server
-    
+    A random token can be obtained by running: openssl rand -hex 32
+
+    in the terminal
+
+    This token will be the token used to access the jupyter lab server
+
 4. Mount the relevant folders in docker-compose.yml volumes; usually the data folder and experiment folder
 5. Specify docker-compose.yml ports; usually between 8880-8890 or 18880-18890, the port IN the container used for jupyter lab will always be 8888
 6. Finally run the service by terminal:
