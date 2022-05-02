@@ -1,0 +1,10 @@
+version: "3.3"
+services:
+  jupyter:
+    image: fastai/fastai:latest
+    environment:
+      - JUPYTER_TOKEN=0f2f4022e7ecbf18a06624ba63dd62f72613c3630ea57fe371e200f27842b7ee
+    volumes:
+      - ./data:/home/data
+      - ./experiments:/home/experiments
+    
