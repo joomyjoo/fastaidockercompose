@@ -23,7 +23,7 @@
 0. sudo ufw allow $PORT/tcp
 1. access the jupyterlab server by opening https://$IP:$PORT  make sure it is https! not http. 
 
-    this dockercontainer takes advantage of a self-signed certificate
+    this dockercontainer takes advantage of a self-signed certificate to encrypt communications
 
 # based on 
 latest fastai docker found at fastai/fastai:latest
