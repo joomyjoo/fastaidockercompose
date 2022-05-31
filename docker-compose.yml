@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: ./Dockerfile
     environment: # change this token by running in the terminal: openssl rand -hex 32
-      - JUPYTER_TOKEN=0f2f4022e7ecbf18a06624ba63dd62f72613c3630ea57fe371e200f27842b7ee
+      - JUPYTER_TOKEN=
     volumes: #link relevant volumes
       - ./data:/home/data
       - ./experiments:/home/experiments
