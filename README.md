@@ -1,4 +1,4 @@
-# How to use
+## How to use
 1. Clone this repository and change the folder name to the intern's initials
 2. cd fastaidockercompose (or the intern's initials)
 3. Set the JUPYTER_TOKEN in the docker-compose.yml file; 
@@ -19,11 +19,11 @@
 
     nohup docker-compose up --build &
 
-# make sure to...
+## make sure to...
 0. sudo ufw allow $PORT/tcp
 1. access the jupyterlab server by opening https://$IP:$PORT  make sure it is https! not http. 
 
     this dockercontainer takes advantage of a self-signed certificate to encrypt communications
 
-# based on 
+## based on 
 miniconda docker image with conda install -c fastchan fastai
