@@ -26,5 +26,4 @@
     this dockercontainer takes advantage of a self-signed certificate to encrypt communications
 
 # based on 
-latest fastai docker found at fastai/fastai:latest
-latest jupyterlab installation via pip install jupyterlab
+miniconda docker image with conda install -c fastchan fastai
